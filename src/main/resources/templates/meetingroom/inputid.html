@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<!-- saved from url=(0052)http://getbootstrap.com/docs/4.0/examples/dashboard/ -->
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form class="form-signin" th:action="@{/room/meetid}">
+
+    <label class="sr-only">RoomId</label>
+    <input type="text" th:name="roomid" class="form-control" th:placeholder="roomid" required="" autofocus="">
+
+    <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+</form>
+</body>
+</html>

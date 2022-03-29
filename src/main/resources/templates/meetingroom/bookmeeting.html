@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<!-- saved from url=(0052)http://getbootstrap.com/docs/4.0/examples/dashboard/ -->
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+        <title>Meeting会议管理系统</title>
+
+        <style type="text/css">
+            #divfrom {
+                float: left;
+                width: 150px;
+            }
+
+            #divto {
+                float: left;
+                width: 150px;
+            }
+
+            #divoperator {
+                float: left;
+                width: 50px;
+                padding: 60px 5px;
+            }
+
+            #divoperator input[type="button"] {
+                margin: 10px 0;
+            }
+
+            #selDepartments {
+                display: block;
+                width: 100%;
+            }
+
+            #selEmployees {
+                display: block;
+                width: 100%;
+                height: 200px;
+            }
+
+            #selSelectedEmployees {
+                display: block;
+                width: 100%;
+                height: 225px;
+            }
+        </style>
+    </head>
+<body onload="body_load()">
+<div class="page-body">
+    <div class="page-content">
+        <div class="content-nav">
+            会议预定 > 预定会议
+        </div>
+        <form action="/bookmeet" method="post">
+            <fieldset>
+                <legend>会议信息</legend>
+                <table class="formtable">
+
+                    <tr>
+                        <td>预订人：</td>
+                        <td>
+                            <input name="lastName" type="text" id="lastName" maxlength="20"/>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>会议ID：</td>
+                        <td>
+                            <input name="meetingid" type="text" id="meetingid" maxlength="20"/>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>会议名称：</td>
+                        <td>
+                            <input name="meetingname" type="text" id="meetingname" maxlength="20"/>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>预计开始时间：</td>
+                        <td>
+                            <input type="text" class="Wdate" id="starttime" name="starttime"
+                                   placeholder="2000/11/11">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>预计结束时间：</td>
+                        <td>
+                            <input type="text" class="Wdate" id="endtime" name="endtime"
+                                   placeholder="2000/11/11">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>会议室名称：</td>
+                        <td>
+                            <select  name="MeetingRoom.roomid">
+
+                                <option  th:each="room:${rooms}" th:text="${room.getRoomname()}"
+                                         th:value="${room.getRoomid()}"></option>
+
+                            </select>
+                        </td>
+                    </tr>
+                  <!--  <tr>
+                        <td>会议说明：</td>
+                        <td>
+                            <textarea name="description" id="description" rows="5" ></textarea>
+                        </td>
+                    </tr>-->
+                    <tr>
+                        <td class="command" colspan="2">
+                            <input type="submit" class="clickbutton" value="预定会议"/>
+                            <input type="reset" class="clickbutton" value="重置"/>
+                        </td>
+                    </tr>
+                </table>
+            </fieldset>
+        </form>
+    </div>
+</div>
+<div class="page-footer">
+    <hr/>
+</div>
+</body>
+</html>
