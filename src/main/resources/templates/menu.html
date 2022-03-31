@@ -6,7 +6,7 @@
 </head>
 <body>
 <div class="sidebar-menugroup">
-    <p>欢迎您的登录：</p><h4 th:text="${session.loginname}"></h4>
+    <p>欢迎您的登录：</p><h4 th:text="${session.username}"></h4>
     <ul class="sidebar-menu">
         <li class="sidebar-menuitem"><a href="/addmeetingroom">添加会议室</a></li>
     <li class="sidebar-menuitem"><a href="/meetingrooms">查看会议室</a></li>
@@ -14,6 +14,7 @@
     <li class="sidebar-menuitem"><a href="/bookm">预定会议</a></li>
     <li class="sidebar-menuitem"><a href="/searchmeetings">搜索会议</a></li>
         <li class="sidebar-menuitem"><a href="/dashboard">员工管理</a></li>
+
     </ul>
 </div>
 </body>

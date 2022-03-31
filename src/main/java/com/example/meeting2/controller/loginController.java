@@ -14,7 +14,26 @@ import java.util.List;
 
 @Controller
 public class loginController {
-    @Autowired
+    @RequestMapping("/index")
+    public String index()
+    {
+        return "index";
+    }
+    @RequestMapping("/tomenu")
+    public String menu( User user ,HttpSession session,Model model)
+    {
+        System.out.println ( user );
+        session.setAttribute ( "username",user.getUsername () );
+        return "menu";
+    }
+    @RequestMapping("/logout")
+    public String logout()
+    {
+        return "index";
+    }
+
+
+    /*@Autowired
     LoginService loginservice;
     @RequestMapping("/index")
     public String index()
@@ -34,5 +53,5 @@ public class loginController {
        }
        else
            return "menu";
-    }
+    }*/
 }
